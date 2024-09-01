@@ -1,5 +1,7 @@
-#include <simplecpp>
+// preprocessor directive
+#include <iostream>
 
-main_program {
-    cout << "hello, World!\n";
+int main() {
+    std::cout << "hello, World!\n";
+    return 0;
 }
