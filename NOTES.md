@@ -20,8 +20,9 @@ If this is something you desire, you’ll have to use a third party library. For
 
 ### Functions:
 - A function is a reusable sequence of statements designed to do a particular job.
-
-  returnType functionName() // This is the function header (tells the compiler about the existence of the function)
-  {
-      // This is the function body (tells the compiler what the function does)
-  }
+```
+returnType functionName() // This is the function header (tells the compiler about the existence of the function)
+{
+    // This is the function body (tells the compiler what the function does)
+}
+```
