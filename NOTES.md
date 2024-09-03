@@ -16,3 +16,12 @@ Thus, x = 5 returns x, and std::cout << 5 returns std::cout. This is done so tha
 ### I/O:
 - The C++ I/O library does not provide a way to accept keyboard input without the user having to press enter.
 If this is something you desire, you’ll have to use a third party library. For console applications, we’d recommend pdcurses, FXTUI, cpp-terminal, or notcurses. Many graphical user interface libraries have their own functions to do this kind of thing.
+
+
+### Functions:
+- A function is a reusable sequence of statements designed to do a particular job.
+
+  returnType functionName() // This is the function header (tells the compiler about the existence of the function)
+  {
+      // This is the function body (tells the compiler what the function does)
+  }
