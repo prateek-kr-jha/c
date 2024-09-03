@@ -26,3 +26,11 @@ returnType functionName() // This is the function header (tells the compiler abo
     // This is the function body (tells the compiler what the function does)
 }
 ```
+- A function parameter is a variable used in the header of a function.
+Function parameters work almost identically to variables defined inside the function,
+but with one difference: they are initialized with a value provided by the caller of the function.
+- When a function is called, all of the parameters of the function are created as variables,
+and the value of each of the arguments is copied into the matching parameter (using copy initialization).
+This process is called pass by value. Function parameters that utilize pass by value are called value parameters.
+- A temporary object (also sometimes called an anonymous object) is an unnamed object that is created by the compiler to store a value temporarily.
+- Temporary objects are destroyed at the end of the full expression in which they are created.
