@@ -1,8 +1,7 @@
 #include <iostream>
-#define TEXT "enter first number: "
- #define ADD
+#include "addClient.h"
 
-int add(int num1, int num2);
+
 int main() {
     int num1{};
     int num2{};
