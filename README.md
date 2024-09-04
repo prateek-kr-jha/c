@@ -34,3 +34,84 @@ and the value of each of the arguments is copied into the matching parameter (us
 This process is called pass by value. Function parameters that utilize pass by value are called value parameters.
 - A temporary object (also sometimes called an anonymous object) is an unnamed object that is created by the compiler to store a value temporarily.
 - Temporary objects are destroyed at the end of the full expression in which they are created.
+
+
+### Multi file project:
+- When you compile your program, you’ll need to include all of the relevant code files on the compile line.
+For example: g++ main.cpp add.cpp -o main, where main.cpp and add.cpp are the names of your code files, and main is the name of the output file.
+
+### Namespaces:
+Any names declared inside the namespace won’t be mistaken for identical names in other scopes.
+- Only declarations and definitions can appear in the scope of a namespace (not executable statements).
+However, a function can be defined inside a namespace, and that function can contain executable statements.
+
+````
+#include <iostream> // imports the declaration of std::cout into the global scope
+
+// All of the following statements are part of the global namespace
+
+void foo();    // okay: function forward declaration
+int x;         // compiles but strongly discouraged: non-const global variable definition (without initializer)
+int y { 5 };   // compiles but strongly discouraged: non-const global variable definition (with initializer)
+x = 5;         // compile error: executable statements are not allowed in namespaces
+
+int main()     // okay: function definition
+{
+    return 0;
+}
+
+void goo();    // okay: A function forward declaration
+````
+
+### Macros:
+a macro is a rule that defines how input text is converted into replacement output text.
+- There are two basic types of macros: object-like macros, and function-like macros. function like macro = bad.
+- By convention, macro names are typically all upper-case, separated by underscores.
+- Avoid macros with substitution text unless no viable alternatives exist.
+
+#### conditional Compilation:
+- #ifdef: The #ifdef preprocessor directive allows the preprocessor to check whether an identifier has been previously defined via #define. If so, the code between the #ifdef and matching #endif is compiled. If not, the code is ignored.
+```
+#include <iostream>
+
+#define PRINT_JOE
+
+int main()
+{
+#ifdef PRINT_JOE
+    std::cout << "Joe\n"; // will be compiled since PRINT_JOE is defined
+#endif
+
+#ifdef PRINT_BOB
+    std::cout << "Bob\n"; // will be excluded since PRINT_BOB is not defined
+#endif
+
+    return 0;
+}
+```
+- #ifndef: is the opposite of #ifdef, in that it allows you to check whether an identifier has NOT been #defined yet.
+
+- #endif:
+
+### Header:
+- Header files allow us to put declarations in one place and then import them wherever we need them. This can save a lot of typing in multi-file programs.
+- In C++, it is a best practice for code files to #include their paired header file (if one exists). In the example above, add.cpp includes add.h.
+
+e.g,
+```
+int something(int); // return type of forward declaration is int
+```
+
+```
+#include "something.h"
+
+void something(int) // error: wrong return type
+{
+}
+```
+
+- Although the preprocessor will happily do so, you should generally not #include .cpp files
+  - Doing so can cause naming collisions between source files.
+  - In a large project it can be hard to avoid one definition rules (ODR) issues.
+  - Any change to such a .cpp file will cause both the .cpp file and any other .cpp file that includes it to recompile, which can take a long time. Headers tend to change less often than source files.
+  - It is non-conventional to do so.
