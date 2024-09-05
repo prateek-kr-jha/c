@@ -110,8 +110,33 @@ void something(int) // error: wrong return type
 }
 ```
 
+- To maximize the chance that missing includes will be flagged by compiler, order your #includes as follows:
+
+  - The paired header file
+  - Other headers from your project
+  - 3rd party library headers
+  - Standard library headers
+The headers for each grouping should be sorted alphabetically (unless the documentation for a 3rd party library instructs you to do otherwise).
+
 - Although the preprocessor will happily do so, you should generally not #include .cpp files
   - Doing so can cause naming collisions between source files.
   - In a large project it can be hard to avoid one definition rules (ODR) issues.
   - Any change to such a .cpp file will cause both the .cpp file and any other .cpp file that includes it to recompile, which can take a long time. Headers tend to change less often than source files.
   - It is non-conventional to do so.
+
+
+- setting include directory for compiler: Using g++, you can use the -I option to specify an alternate include directory:
+g++ -o main -I/source/includes main.cpp
+
+#### Header guard:
+- All of your header files should have header guards on them. SOME_UNIQUE_NAME_HERE can be any name you want, but by convention is set to the full filename of the header file, typed in all caps, using underscores for spaces or punctuation.
+Some good suggestions are a naming convention of PROJECT_PATH_FILE_H, FILE_LARGE-RANDOM-NUMBER_H, or FILE_CREATION-DATE_H.
+```
+#ifndef SOME_UNIQUE_NAME_HERE
+#define SOME_UNIQUE_NAME_HERE
+
+// your declarations (and certain types of definitions) here
+
+#endif
+```
+- #pragma, alternate form of header guards
