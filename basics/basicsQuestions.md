@@ -26,7 +26,6 @@
 4. Create a string variable to store your **city name** and print it.
 5. Create two variables (one integer, one float) and print them in the same line.
 
----
 
 ## 3️⃣ Constants
 
@@ -77,4 +76,153 @@
 - Change values and re-run.
 - Practice daily.
 
+# C++ Basics — Explanations & Practice Questions (No Code)
+
+> **Rules**
+> - No copying solutions.
+> - Write code yourself.
+> - Compile, read errors, fix them.
+> - Beginner-friendly (5th-standard level).
+
+---
+
+## 1️⃣ Literals
+
+### 📘 Explanation
+A **literal** is a **fixed value written directly in the program**.  
+Its value does **not change** while the program runs.
+
+Common literals:
+- Numbers (whole or decimal)
+- Characters
+- Text (strings)
+- Boolean values (`true`, `false`)
+
+---
+
+### ❓ Practice Questions
+1. Write a program that prints an **integer literal**.
+2. Write a program that prints a **floating-point literal**.
+3. Write a program that prints a **character literal**.
+4. Write a program that prints a **string literal**.
+5. Write a program that prints a **boolean literal**.
+
+---
+
+## 2️⃣ Typed Constant Expressions (`const`)
+
+### 📘 Explanation
+A **typed constant expression**:
+- Has a **fixed data type**
+- Cannot be changed after creation
+- Is checked by the compiler
+
+Trying to modify it causes a **compile-time error**.
+
+---
+
+### ❓ Practice Questions
+1. Create a constant integer and print it.
+2. Create a constant float and use it in a calculation.
+3. Create a constant character and print it.
+4. Try changing the value of a constant and observe the error.
+5. Use a constant inside a printed message.
+
+---
+
+## 3️⃣ Preprocessor Definitions (`#define`)
+
+### 📘 Explanation
+`#define` works **before compilation**.  
+It performs **simple text replacement**.
+
+Key points:
+- No data type
+- No scope rules
+- Mostly used for fixed values or macros
+
+---
+
+### ❓ Practice Questions
+1. Define a constant number using `#define` and print it.
+2. Use `#define` to store item price and calculate total cost.
+3. Define a text message using `#define` and print it.
+4. Change the `#define` value and observe output change.
+5. Compare behavior of `#define` with `const`.
+
+---
+
+## 4️⃣ Character and String Literals
+
+### 📘 Explanation
+- **Character literal**
+  - Written using **single quotes**
+  - Represents **one character**
+- **String literal**
+  - Written using **double quotes**
+  - Represents **multiple characters**
+
+They are **not the same** in C++.
+
+---
+
+### ❓ Practice Questions
+1. Print a single character using a character literal.
+2. Print your name using a string literal.
+3. Print the same letter once as a character and once as a string.
+4. Store a character in a variable and print it.
+5. Store a string in a variable and print it.
+
+---
+
+## 5️⃣ Raw Strings
+
+### 📘 Explanation
+A **raw string**:
+- Does **not process escape characters**
+- Prints text exactly as written
+- Is useful for file paths, regex, and multi-line text
+
+Raw strings use this format:
+R"( text )"
+
+
+---
+
+### ❓ Practice Questions
+1. Print a file path using a normal string.
+2. Print the same file path using a raw string.
+3. Print a multi-line message using a raw string.
+4. Write a raw string containing quotation marks.
+5. Compare output of a normal string and a raw string.
+
+---
+
+## 🧠 Concept Comparison
+
+| Topic | Mental Model |
+|----|----|
+| Literal | Fixed value |
+| `const` | Locked variable |
+| `#define` | Text replacement |
+| Character literal | One character |
+| String literal | Sentence |
+| Raw string | No escape handling |
+
+---
+
+## ✅ Practice Tips
+- Type everything yourself
+- Change values and re-run
+- Read compiler errors carefully
+- Practice daily
+
+---
+
+### Next Topics (tell me what you want)
+- `const` vs `#define` (deep dive)
+- Escape sequences explained
+- Common beginner mistakes
+- Mini programs using all topics
+- Interview trick questions
 ---
