@@ -64,7 +64,7 @@ void startGame(int max) {
         return;
     }
     
-    const int min = 1;
+    const int min = 1;// not best way to define
     int randomValue = generateRandomNumber(min, max);
     int attempts = 0;
     
