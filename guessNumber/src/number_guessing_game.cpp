@@ -33,13 +33,14 @@ void startGame(int max=100) {
     int attempts = 0;
     std::cout << "Game starts: Guess a number between " << min << " and " << max << "\n";
     while (true){
-        attempts++;
         std::string guess{ };
         std::cin >> guess;
         int guessValue  { convertInteger(guess) };
         if(guessValue == -1) {
             std::cout << "Value guessed is invalid, Please guess again.\n";
-        } else if(guessValue > randomValue) {
+            continue;
+        }
+        if(guessValue > randomValue) {
             std::cout << "Value guessed is more than actual, Please guess again.\n";
         } else if(guessValue < randomValue) {
             std::cout << "Value guessed is less than actual, Please guess again.\n";
@@ -48,6 +49,6 @@ void startGame(int max=100) {
             std::cout << "Total attempts = " << attempts << "\n";
             break;
         }
+        attempts++;
     }
-    
 }
