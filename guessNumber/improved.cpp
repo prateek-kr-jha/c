@@ -15,6 +15,7 @@
 #include <string>
 #include <stdexcept>
 #include <limits>
+#include <random>
 
 // Named constant for invalid input return value
 constexpr int INVALID_GUESS = -1;

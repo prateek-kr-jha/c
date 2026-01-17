@@ -9,7 +9,9 @@ rather than UI or frameworks.
 
 ---
 
-## 1. Calculator
+## 1. Calculator 
+
+- [x] Completion Status
 
 ### Description
 

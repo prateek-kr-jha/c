@@ -15,4 +15,3 @@ double convert(double value, const std::string& conversion) {
 
   throw std::invalid_argument("Invalid conversion type");
 }
-
