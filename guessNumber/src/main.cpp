@@ -25,14 +25,14 @@ int main(int argc, char* argv[]){
 
     startGame(game_ceiling);
     return 0;
-  } catch(const std::& e) {
-    std::cerr << "Error: invalid input. Must be an integer";
-    return 1
+  } catch(const std::out_of_range& e) {
+    std::cerr << "Error: Input value is too large for integer.";
+    return 1;
   } catch(const std::invalid_argument& e) {
     std::cerr << "Error: invalid input. Must be an integer";
-    return 1
+    return 1;
   } catch(const std::exception& ex){
-    std::cerro << "Error: " << ex.what() << std::endl;
+    std::cerr << "Error: " << ex.what() << std::endl;
     return 1;
   }
 }
